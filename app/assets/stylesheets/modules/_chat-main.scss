@@ -43,7 +43,7 @@
   &__body {
     background-color: $stagnant_gray;
     height: calc(100% - 100px - 90px - 46px);
-    padding: 46px 40px 0 40px;
+    padding: 46px 40px 0;
     overflow: scroll;
 
     .message {
