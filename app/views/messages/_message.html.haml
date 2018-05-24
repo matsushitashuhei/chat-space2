@@ -1,28 +1,8 @@
 .message
   .message__user-name
-    sample
+    = message.user.name
   .message__posted-time
-    2018/XX/XX XX:XX:XX
+    = message.created_at.to_s(:datetime)
   .message__content
-    sample
-.message
-  .message__user-name
-    sample
-  .message__posted-time
-    2018/XX/XX XX:XX:XX
-  .message__content
-    sample
-.message
-  .message__user-name
-    sample
-  .message__posted-time
-    2018/XX/XX XX:XX:XX
-  .message__content
-    sample
-.message
-  .message__user-name
-    sample
-  .message__posted-time
-    2018/XX/XX XX:XX:XX
-  .message__content
-    sample
+    = message.content if message.content.present?
+    = image_tag message.image if message.image.present?
