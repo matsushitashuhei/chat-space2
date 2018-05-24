@@ -19,7 +19,9 @@
       = link_to 'Edit', "#", class: "group-edit"
     .group-info__lower
       .group-members
-        Member: sample
+        Member:
+        - @group.users.each do |user|
+          = user.name
 
   .chat-main__body
     = render partial: 'message', collection: @messages
