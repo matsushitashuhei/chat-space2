@@ -1,8 +1,0 @@
-.user-info
-  %h4.user-info__login-user-name
-    = current_user.name
-  .user-info__icons
-    = link_to new_group_path do
-      = fa_icon 'edit', class: 'icon'
-    = link_to edit_user_path(current_user) do
-      = fa_icon 'cog', class: 'icon'

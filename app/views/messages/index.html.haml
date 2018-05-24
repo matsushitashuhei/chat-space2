@@ -1,15 +1,34 @@
 .chat-side
-  = render partial: "user-info"
+  .user-info
+    %h4.user-info__login-user-name
+      = current_user.name
+    .user-info__icons
+      = link_to new_group_path do
+        = fa_icon 'edit', class: 'icon'
+      = link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'icon'
 
   .group-list
     = render partial: "group-list"
 
 .chat-main
   .chat-main__header
-    = render partial: "group-info"
+    .group-info__upper
+      .selected-group-name
+        sample
+      = link_to 'Edit', "#", class: "group-edit"
+    .group-info__lower
+      .group-members
+        Member: sample
 
   .chat-main__body
     = render partial: "message"
 
   .chat-main__footer
-    = render partial: "form"
+    %form
+      %input.message-content{ type: 'text', placeholder: 'type a message' }
+      %input.send-btn{ type: 'submit', value: 'Send'}
+      %label
+        %input.picture{ type: 'file' }
+          %i.fa.fa-image
+

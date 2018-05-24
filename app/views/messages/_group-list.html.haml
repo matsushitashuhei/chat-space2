@@ -1,10 +1,7 @@
 .group-content
-  .group-content__group-name
-    sample
-  .group-content__group-last-message
-    sample
-.group-content
-  .group-content__group-name
-    sample
-  .group-content__group-last-message
-    sample
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .group-content__group-name
+        = group.name
+      .group-content__group-last-message
+        メッセージはまだありません。
