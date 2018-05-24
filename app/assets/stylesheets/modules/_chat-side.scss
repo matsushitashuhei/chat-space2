@@ -33,13 +33,18 @@
     .group-content {
       padding: 20px 0;
 
-      &__group-name {
-        font-size: 15px;
-        padding-bottom: 5px;
-      }
+      a {
+        text-decoration: none;
+        color: $white;
 
-      &__group-last-message {
-        font-size: 11px;
+        &__group-name {
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+
+        &__group-last-message {
+          font-size: 11px;
+        }
       }
     }
   }
