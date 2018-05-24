@@ -3,6 +3,6 @@
     .message__user-name
       = message.user.name
     .message__posted-time
-      = message.created_at
+      = message.created_at.to_s(:datetime)
     .message__content
       = message.content
