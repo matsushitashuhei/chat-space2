@@ -22,7 +22,7 @@
         Member: sample
 
   .chat-main__body
-    = render partial: "message"
+    = render partial: 'message', collection: @messages
 
   .chat-main__footer
     = form_for [@group, @message] do |f|
