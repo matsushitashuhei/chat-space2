@@ -25,10 +25,9 @@
     = render partial: "message"
 
   .chat-main__footer
-    %form
-      %input.message-content{ type: 'text', placeholder: 'type a message' }
-      %input.send-btn{ type: 'submit', value: 'Send'}
-      %label
-        %input.picture{ type: 'file' }
-          %i.fa.fa-image
-
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'message-content', placeholder: 'type a message'
+      = f.label :image do
+        = fa_icon 'image'
+        = f.file_field :image, class: 'picture'
+      = f.submit 'Send', class: 'send-btn'
