@@ -4,5 +4,7 @@
   .message__posted-time
     = message.created_at.to_s(:datetime)
   .message__content
-    = message.content if message.content.present?
-    = image_tag message.image if message.image.present?
+    .content__text
+      = message.content if message.content.present?
+    .content__image
+      = image_tag message.image if message.image.present?
