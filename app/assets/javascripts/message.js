@@ -15,7 +15,7 @@ $(function() {
       </div>`
     return html;
   }
-  
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -25,6 +25,13 @@ $(function() {
       type: 'POST',
       data: formData,
       dataType: 'json'
+    })
+    .done(function(data) {
+      var html = buildHTML(data);
+      $('.chat-main__body').append(html);
+      $('.message-content').val('');
+      $('.picture').val('');
+      $('.chat-main__body').animate({ scrollTop: $('.chat-main__body').height() }, 'swing');
     })
   })
 })
