@@ -1,5 +1,5 @@
-.group-content
-  - current_user.groups.each do |group|
+- current_user.groups.each do |group|
+  .group-content
     = link_to group_messages_path(group) do
       .group-content__group-name
         = group.name
