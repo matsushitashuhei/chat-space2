@@ -15,13 +15,14 @@
   .chat-main__header
     .group-info__upper
       .selected-group-name
-        sample
-      = link_to 'Edit', "#", class: "group-edit"
+        = @group.name
+      = link_to 'Edit', edit_group_path(@group) , class: "group-edit"
     .group-info__lower
       .group-members
         Member:
-        - @group.users.each do |user|
-          = user.name
+        %span
+          - @group.users.each do |user|
+            = user.name
 
   .chat-main__body
     = render partial: 'message', collection: @messages
